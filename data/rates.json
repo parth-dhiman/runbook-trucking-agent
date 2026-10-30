@@ -1,0 +1,11 @@
+{
+  "currency": "USD",
+  "description": "Standard all-in price (fuel included) for one truckload, by pickup state, delivery state, and equipment. A quote at or above the price is approved; below it needs a person to approve.",
+  "rates": [
+    { "pickup_state": "TN", "delivery_state": "OH", "equipment": "dry van", "price": 1700 },
+    { "pickup_state": "CA", "delivery_state": "CO", "equipment": "reefer", "price": 4600 },
+    { "pickup_state": "AL", "delivery_state": "TX", "equipment": "flatbed", "price": 2500 },
+    { "pickup_state": "PA", "delivery_state": "GA", "equipment": "dry van", "price": 2450 },
+    { "pickup_state": "IL", "delivery_state": "IN", "equipment": "dry van", "price": 850 }
+  ]
+}

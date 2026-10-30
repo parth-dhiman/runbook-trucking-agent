@@ -1,0 +1,7 @@
+anthropic==2.3.0
+google-api-python-client==2.201.0
+google-auth==2.53.0
+google-auth-oauthlib==1.5.0
+pydantic==2.14.2
+pymongo==4.19.0
+python-dotenv==1.2.4

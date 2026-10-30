@@ -1,0 +1,70 @@
+{
+  "description": "Minimum details an order request email must contain to be accepted as a valid load order.",
+  "required_fields": [
+    {
+      "field": "customer_reference",
+      "label": "Customer reference number",
+      "description": "The shipper's own identifier for the shipment, such as a PO, order, load, or sales order number.",
+      "examples": ["PO 4500918273", "Load # SV-26-11872", "SO-778214"]
+    },
+    {
+      "field": "pickup_location",
+      "label": "Pickup location",
+      "description": "Facility street address with city and state (ZIP preferred). A city on its own is not enough.",
+      "examples": ["4120 Distriplex Dr, Memphis, TN 38118"]
+    },
+    {
+      "field": "pickup_date",
+      "label": "Pickup date",
+      "description": "A specific calendar date, such as 11/2 or November 2. Vague timing like 'early next week' or 'ASAP' is not enough.",
+      "examples": ["Monday, Nov 2", "11/4"]
+    },
+    {
+      "field": "delivery_location",
+      "label": "Delivery location",
+      "description": "Facility street address with city and state (ZIP preferred). A city on its own is not enough.",
+      "examples": ["2250 Spiegel Dr, Groveport, OH 43125"]
+    },
+    {
+      "field": "delivery_date",
+      "label": "Delivery date",
+      "description": "A specific calendar date, on or after the pickup date.",
+      "examples": ["Tuesday, Nov 3", "11/5"]
+    },
+    {
+      "field": "commodity",
+      "label": "Commodity",
+      "description": "What is being shipped.",
+      "examples": ["Packaged copy paper", "Fresh romaine hearts", "Structural steel beams"]
+    },
+    {
+      "field": "weight_lbs",
+      "label": "Weight",
+      "description": "Total shipment weight in pounds. A pallet count alone is not enough.",
+      "examples": ["38,500 lbs", "approx. 40,000 lbs"]
+    },
+    {
+      "field": "equipment_type",
+      "label": "Equipment type",
+      "description": "Trailer type needed for the load.",
+      "allowed_values": ["dry van", "reefer", "flatbed", "step deck"]
+    }
+  ],
+  "conditional_fields": [
+    {
+      "field": "temperature",
+      "label": "Reefer temperature",
+      "required_when": { "equipment_type": "reefer" },
+      "description": "Set point in °F, plus run mode (continuous or cycle) if given.",
+      "examples": ["34°F continuous"]
+    }
+  ],
+  "optional_fields": [
+    { "field": "pickup_window", "label": "Pickup time or window" },
+    { "field": "delivery_appointment", "label": "Delivery time or appointment" },
+    { "field": "handling_units", "label": "Pallet, carton, or bundle count" },
+    { "field": "special_instructions", "label": "Special instructions (load bars, tarps, washout, etc.)" },
+    { "field": "contact_name", "label": "Shipper contact name" },
+    { "field": "contact_phone", "label": "Shipper contact phone" }
+  ]
+}
